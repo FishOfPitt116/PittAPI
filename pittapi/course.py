@@ -258,6 +258,7 @@ def get_extra_section_details(
                 content = int(content)
 
             data[label] = content
+    print(**data)
     return SectionDetails(**data)
 
 
