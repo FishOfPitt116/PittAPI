@@ -87,9 +87,9 @@ class CombinedSection(NamedTuple):
 class SectionDetails(NamedTuple):
     term: str
     session: str
-#    career: str
+    career: str
     units: int
-#    grading: str
+    grading: str
     components: List[str]
 
     status: str
@@ -217,6 +217,8 @@ def get_extra_section_details(
     data = {"term": term}
     session = HTMLSession()
 
+    data["career"] = None
+    data["grading"] = None
     url = SECTION_DETAIL_URL.format(term=term, class_number=class_number)
     resp = session.get(url)
     elements = resp.html.xpath("/html/body/section/section/div")
