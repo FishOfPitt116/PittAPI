@@ -87,9 +87,9 @@ class CombinedSection(NamedTuple):
 class SectionDetails(NamedTuple):
     term: str
     session: str
-    career: str
+#    career: str
     units: int
-    grading: str
+#    grading: str
     components: List[str]
 
     status: str
@@ -258,7 +258,6 @@ def get_extra_section_details(
                 content = int(content)
 
             data[label] = content
-    print(**data)
     return SectionDetails(**data)
 
 
