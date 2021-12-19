@@ -253,7 +253,10 @@ def get_extra_section_details(
             if label == "components":
                 content = content.split(", ")
             elif label == "units":
-                content = CREDIT_UNITS_PATTERN.parse(content)[0]
+                try:
+                    content = CREDIT_UNITS_PATTERN.parse(content)[0]
+                except TypeError as e:
+                    pass
             elif label == "attributes":
                 content = [content] + extra
             elif label in SECTION_DETAIL_INT_FIELD:
